@@ -1,7 +1,7 @@
 package com.example.service.user.adapter.entrypoint.api
 
-import com.example.service.user.adapter.entrypoint.api.model.SaveUserBodyDto
-import com.example.service.user.adapter.persistence.UserRepository
+import com.example.service.user.infrastructure.controller.dto.SaveUserBodyDto
+import com.example.service.user.infrastructure.repository.UserRepository
 import com.example.service.user.utils.fakeSaveUserBodyDto
 import com.example.service.user.utils.fakeUserDataBuilder
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper

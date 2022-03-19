@@ -1,6 +1,6 @@
-package com.example.service.user.adapter.persistence
+package com.example.service.user.infrastructure.repository
 
-import com.example.service.user.adapter.persistence.model.UserData
+import com.example.service.user.infrastructure.repository.data.UserData
 import com.example.service.user.utils.fakeUserDataBuilder
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach

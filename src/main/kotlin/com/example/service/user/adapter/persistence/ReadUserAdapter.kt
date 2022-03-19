@@ -7,6 +7,7 @@ import com.example.service.user.domain.UserFunctions.userFirstName
 import com.example.service.user.domain.UserFunctions.userLastName
 import com.example.service.user.domain.UserId
 import com.example.service.user.infrastructure.annotations.Adapter
+import com.example.service.user.infrastructure.repository.UserRepository
 
 @Adapter
 class ReadUserAdapter(private val userRepository: UserRepository,

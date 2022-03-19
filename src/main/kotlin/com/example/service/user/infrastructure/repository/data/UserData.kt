@@ -1,4 +1,4 @@
-package com.example.service.user.adapter.persistence.model
+package com.example.service.user.infrastructure.repository.data
 
 import java.time.LocalDateTime
 import javax.persistence.*

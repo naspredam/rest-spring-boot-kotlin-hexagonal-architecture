@@ -1,6 +1,6 @@
 package com.example.service.user.adapter.persistence
 
-import com.example.service.user.adapter.persistence.model.UserData
+import com.example.service.user.infrastructure.repository.data.UserData
 import com.example.service.user.domain.User
 import com.example.service.user.domain.UserFunctions.userFirstName
 import com.example.service.user.domain.UserFunctions.userIdAsInt

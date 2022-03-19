@@ -1,6 +1,6 @@
 package com.example.service.user.adapter.entrypoint.api
 
-import com.example.service.user.adapter.entrypoint.api.model.UserDto
+import com.example.service.user.infrastructure.controller.dto.UserDto
 import com.example.service.user.application.usecase.FindAllUsersUseCase
 import com.example.service.user.application.usecase.FindUserByIdUseCase
 import com.example.service.user.domain.User

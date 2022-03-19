@@ -1,7 +1,7 @@
-package com.example.service.user.adapter.entrypoint.api
+package com.example.service.user.infrastructure.controller
 
-import com.example.service.user.adapter.entrypoint.api.model.SaveUserBodyDto
-import com.example.service.user.adapter.entrypoint.api.model.UserDto
+import com.example.service.user.infrastructure.controller.dto.SaveUserBodyDto
+import com.example.service.user.infrastructure.controller.dto.UserDto
 import com.example.service.user.application.port.entrypoint.api.ChangeUserEndpointPort
 import com.example.service.user.application.port.entrypoint.api.FindUserEndpointPort
 import org.springframework.http.HttpStatus

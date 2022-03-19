@@ -1,6 +1,7 @@
 package com.example.service.user.adapter.persistence
 
 import com.example.service.user.domain.UserFunctions.userIdAsInt
+import com.example.service.user.infrastructure.repository.UserRepository
 import com.example.service.user.utils.*
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

@@ -5,6 +5,7 @@ import com.example.service.user.domain.User
 import com.example.service.user.domain.UserFunctions.userIdAsInt
 import com.example.service.user.domain.UserId
 import com.example.service.user.infrastructure.annotations.Adapter
+import com.example.service.user.infrastructure.repository.UserRepository
 
 @Adapter
 class WriteUserAdapter(private val userRepository: UserRepository,

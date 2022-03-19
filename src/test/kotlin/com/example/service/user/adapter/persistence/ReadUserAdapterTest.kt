@@ -1,12 +1,13 @@
 package com.example.service.user.adapter.persistence
 
 import arrow.core.getOrElse
-import com.example.service.user.adapter.persistence.model.UserData
+import com.example.service.user.infrastructure.repository.data.UserData
 import com.example.service.user.domain.User
 import com.example.service.user.domain.UserFunctions.userFirstName
 import com.example.service.user.domain.UserFunctions.userIdAsInt
 import com.example.service.user.domain.UserFunctions.userLastName
 import com.example.service.user.domain.UserId
+import com.example.service.user.infrastructure.repository.UserRepository
 import com.example.service.user.utils.*
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

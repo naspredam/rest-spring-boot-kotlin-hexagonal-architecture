@@ -1,9 +1,10 @@
 package com.example.service.user.adapter.entrypoint.api
 
-import com.example.service.user.adapter.entrypoint.api.model.SaveUserBodyDto
-import com.example.service.user.adapter.entrypoint.api.model.UserDto
+import com.example.service.user.infrastructure.controller.dto.SaveUserBodyDto
+import com.example.service.user.infrastructure.controller.dto.UserDto
 import com.example.service.user.application.port.entrypoint.api.ChangeUserEndpointPort
 import com.example.service.user.application.port.entrypoint.api.FindUserEndpointPort
+import com.example.service.user.infrastructure.controller.UserController
 import com.example.service.user.utils.fakeSaveUserBodyDto
 import com.example.service.user.utils.fakeUserDto
 import com.example.service.user.utils.fakeUserIdAsInt
