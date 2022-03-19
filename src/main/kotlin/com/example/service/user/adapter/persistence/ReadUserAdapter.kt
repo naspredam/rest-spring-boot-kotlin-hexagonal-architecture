@@ -1,5 +1,6 @@
 package com.example.service.user.adapter.persistence
 
+import arrow.core.toOption
 import com.example.service.user.application.port.persistence.ReadUserPort
 import com.example.service.user.domain.User
 import com.example.service.user.domain.UserFunctions.userFirstName
@@ -26,6 +27,7 @@ class ReadUserAdapter(private val userRepository: UserRepository,
             userRepository.findById(userId.intValue)
                 .map { userJpaMapper.toDomain(it) }
                 .orElse(null)
+                .toOption()
 
     override fun fetchAll() = userRepository.findAll()
                 .map { userJpaMapper.toDomain(it) }

@@ -23,6 +23,7 @@ dependencies {
 	implementation("com.h2database:h2")
 	implementation("org.liquibase:liquibase-core")
 
+	implementation("io.arrow-kt:arrow-core:1.0.1")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

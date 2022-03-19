@@ -1,5 +1,7 @@
 package com.example.service.user.application.service
 
+import arrow.core.getOrElse
+import arrow.core.orElse
 import com.example.service.user.application.port.persistence.ReadUserPort
 import com.example.service.user.application.usecase.FindAllUsersUseCase
 import com.example.service.user.application.usecase.FindUserByIdUseCase
@@ -12,5 +14,5 @@ class ReadOnlyUserService(private val readUserPort: ReadUserPort) : FindUserById
 
     override fun fetchAllPersisted() = readUserPort.fetchAll()
 
-    override fun findById(userId: UserId) = readUserPort.fetchById(userId)?: throw EntityNotFoundException()
+    override fun findById(userId: UserId) = readUserPort.fetchById(userId).getOrElse { throw EntityNotFoundException() }
 }

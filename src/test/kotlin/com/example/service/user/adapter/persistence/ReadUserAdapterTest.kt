@@ -1,5 +1,6 @@
 package com.example.service.user.adapter.persistence
 
+import arrow.core.getOrElse
 import com.example.service.user.adapter.persistence.model.UserData
 import com.example.service.user.domain.User
 import com.example.service.user.domain.UserFunctions.userFirstName
@@ -84,7 +85,8 @@ internal class ReadUserAdapterTest {
         every { userRepository.findById(userId.intValue) } returns Optional.empty()
 
         val userOptional = readUserAdapter.fetchById(userId)
-        assertThat(userOptional).isNull()
+        assertThat(userOptional).isNotNull
+        assertThat(userOptional.isEmpty()).isTrue()
     }
 
     @Test
@@ -96,8 +98,9 @@ internal class ReadUserAdapterTest {
         every { userRepository.findById(foundUserData.id!!) } returns Optional.of(foundUserData)
         every { userJpaMapper.toDomain(foundUserData) } returns user
 
-        val userOptional = readUserAdapter.fetchById(userId)
-        assertThat(userOptional).isEqualTo(user)
+        val userOption = readUserAdapter.fetchById(userId)
+        assertThat(userOption).isNotNull
+        assertThat(userOption.getOrElse { null }).isEqualTo(user)
     }
 
     @Test

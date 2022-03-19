@@ -1,5 +1,7 @@
 package com.example.service.user.application.service
 
+import arrow.core.Option
+import arrow.core.none
 import com.example.service.user.application.port.persistence.ReadUserPort
 import com.example.service.user.domain.User
 import com.example.service.user.domain.UserId
@@ -29,7 +31,7 @@ internal class ReadOnlyUserServiceTest {
     fun `should return entity not found, when the id was not found ont the read port` () {
         val userId: UserId = fakeUserId()
 
-        every { readUserPort.fetchById(userId) } returns null
+        every { readUserPort.fetchById(userId) } returns none()
 
         Assertions.assertThatThrownBy { readOnlyUserService.findById(userId) }
                 .isInstanceOf(EntityNotFoundException::class.java)
@@ -42,7 +44,7 @@ internal class ReadOnlyUserServiceTest {
         val userId = fakeUserId()
         val userFromPort = fakeUser()
 
-        every { readUserPort.fetchById(userId) } returns userFromPort
+        every { readUserPort.fetchById(userId) } returns Option(userFromPort)
 
         val byId = readOnlyUserService.findById(userId)
         assertThat(byId).isEqualTo(userFromPort)
