@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.4.3"
+	id("org.springframework.boot") version "2.6.4"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	kotlin("jvm") version "1.4.30"
-	kotlin("plugin.spring") version "1.4.30"
+	kotlin("jvm") version "1.6.10"
+	kotlin("plugin.spring") version "1.6.10"
 }
 
 group = "com.example.service.user"
 version = "0.0.1"
-java.sourceCompatibility = JavaVersion.VERSION_15
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
@@ -28,16 +28,15 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.assertj:assertj-core:3.18.1")
-	testImplementation("io.mockk:mockk:1.10.4")
-	testImplementation("com.tngtech.archunit:archunit-junit5:0.15.0")
+	testImplementation("io.mockk:mockk:1.12.3")
+	testImplementation("com.tngtech.archunit:archunit-junit5:0.23.1")
 	testImplementation("com.github.javafaker:javafaker:1.0.2")
 }
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "15"
+		jvmTarget = "17"
 	}
 }
 

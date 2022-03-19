@@ -119,7 +119,9 @@ internal class ReadUserAdapterTest {
         every { userJpaMapper.toDomain(userData1) } returns user1
         every { userJpaMapper.toDomain(userData2) } returns user2
 
-        val users: Collection<User> = readUserAdapter.fetchAll()
-        assertThat(users).hasSize(2).containsExactlyInAnyOrder(user1, user2)
+        val users: List<User> = readUserAdapter.fetchAll()
+        assertThat(users).hasSize(2)
+        assertThat(users[0]).isEqualTo(user1)
+        assertThat(users[1]).isEqualTo(user2)
     }
 }
